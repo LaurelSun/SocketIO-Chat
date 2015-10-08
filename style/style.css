@@ -1,0 +1,132 @@
+ul{padding:0px;}
+ul li{list-style: none;}
+.headimg{width:45px;}
+
+.dialog{
+    position:relative;
+    display:inline-block;
+    border-radius:5px;
+    max-width: 80%;
+    word-break: break-all;
+
+}
+.dialog span{line-height: 20px; padding: 10px; display: block}
+
+.dialog i {
+    position:absolute;
+    top:9px;
+    width:0;
+    height:0;
+    font-size:0;
+    border:solid 8px;
+
+}
+.other .arrow{ border-color: transparent #abcdef transparent transparent; left:-16px;}
+.self .arrow{ border-color:transparent transparent transparent #F8C301; right:-16px; }
+
+.chatList li{margin: 10px 0px;}
+
+.other{  background:#abcdef;}
+.self{ background:#F8C301; float:right;}
+
+.sys{
+    background-color: #DBDBDB;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    width: 40%;
+    margin: 3px auto;
+    padding: 3px;
+    border-radius: 5px;
+
+}
+
+
+.left{
+    float:left;
+    margin-right: 10px;
+
+}
+.right{
+    float:right;
+    margin-left: 10px;
+}
+.menuContainer{
+    padding-top: 10px;
+    height:800px;
+    min-height: 500px;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x:hidden;
+
+    border: 1px solid #eee;
+    border-left: 5px solid #0b97c4;
+    border-radius: 3px;
+    padding:10px 5px;
+
+}
+.userContainer .cur{
+    background-color: #dde8ee;
+}
+.menuContainer li:after{
+    content:'';
+    clear:both;
+    display:block;
+}
+.sendContainer{
+    width:100%;
+     padding:0px 5px;
+    border: 1px solid #eee;
+    border-left: 5px solid #0b97c4;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.sendTypeInfo{
+    line-height: 30px;
+    height: 30px;
+    color:#cccccc;
+    padding-left: 30px;
+}
+
+.userContainer{
+    height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.personal{
+    margin: 10px 0px;
+    border-bottom: 5px solid #0b97c4;
+
+    padding: 5px 5px 5px 10px;
+}
+.personal .badge{
+    background-color: #0b97c4;
+}
+ .personalHead{
+    vertical-align: bottom;
+    width: 90px;
+}
+
+ .userLst li{
+     padding: 10px 0px 10px 10px;
+     border-bottom:1px solid #E9e9e9;
+
+ }
+
+ .userLst li .badge{
+     background-color: #d9534f;
+ }
+
+ .avatar{
+     text-align: center;
+     padding:10px 0px;
+ }
+ .avatar a{
+     color:#0b97c4;
+     cursor: pointer;
+     margin-top: 10px;
+     display: inline-block;
+     text-decoration: none;
+
+ }

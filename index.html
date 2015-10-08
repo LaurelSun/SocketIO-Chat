@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket.io</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style/style.css"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script  type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/chat.js"></script>
+    <script type="text/javascript" src="js/Bind.js" charset="utf-8"></script>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2">
+                <div  class="personal">
+                    <span>
+                        <img src="img/1.jpg" alt="head" class="img-thumbnail personalHead" id="personalHead"/>
+                        <span>total member: <span class="badge" id="totalCnt"></span></span>
+                    </span>
+                </div>
+                <div class="userContainer">
+                    <ul  class="userLst">
+                        <!--<li  >-->
+                            <!--<img src="img/2.jpg" alt="head" class="img-thumbnail personalHead"/>-->
+                            <!--<span>用户1 <span class="badge">42</span></span>-->
+                        <!--</li>-->
+
+                        <!--<li  >-->
+                            <!--<img src="img/3.jpg" alt="head" class="img-thumbnail personalHead"/>-->
+                            <!--<span>用户2 <span class="badge">42</span></span>-->
+                        <!--</li>-->
+                        <!--<li  >-->
+                            <!--<img src="img/3.jpg" alt="head" class="img-thumbnail personalHead"/>-->
+                            <!--<span>用户2 <span class="badge">42</span></span>-->
+                        <!--</li>-->
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-10">
+                <div class="menuContainer">
+                    <ul  id="messageList">
+
+                        <!--<li>-->
+                            <!--<div>-->
+                                <!--<div class="left">-->
+                                    <!--<img src="img/1.jpg" alt="head" class="img-thumbnail headimg"/>-->
+                                <!--</div>-->
+                                <!--<div class="dialog other">-->
+                                    <!--<i class="arrow"></i>-->
+                                    <!--<span>Hello</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+
+                        <!--<li>-->
+                            <!--<div>-->
+                                <!--<div class="right">-->
+                                    <!--<img src="img/1.jpg" alt="head" class="img-thumbnail headimg"/>-->
+                                <!--</div>-->
+                                <!--<div class="dialog self">-->
+                                    <!--<i class="arrow"></i>-->
+                                    <!--<span>Hello</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+
+                        <!--<li>-->
+                            <!--<div class="sys">123</div>-->
+                        <!--</li>-->
+
+                    </ul>
+                </div>
+                <div class="sendContainer">
+
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="txtMsg"  >
+                         <span class="input-group-btn">
+                              <button class="btn btn-primary" id="btnSubmit" type="button">Submit</button>
+                         </span>
+                    </div>
+                    <div class="sendTypeInfo">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1"  data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true">&times;</span></button>-->
+                    <h4 class="modal-title" id="myModalLabel">Setting</h4>
+                </div>
+
+                <div class="modal-body">
+                    <ul>
+                        <li class="avatar">
+                            <img src="img/1.jpg" alt="head" id="setAvatar" class="img-thumbnail "/></br>
+                            <a class="btn_change">change</a>
+                        </li>
+
+                        <li class="setUserName  ">
+                            <input type="text" class="form-control " id="txtUser"  placeholder="UserName" >
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnConnect">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
