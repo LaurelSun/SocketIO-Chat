@@ -22,9 +22,10 @@ $(function(){
         var curLi=$(this);
         chat.targetUser=new User();
         chat.targetUser.avatar=curLi.find('img').attr('src');
-        chat.targetUser.name=curLi.attr('class');
-
+        chat.targetUser.name=curLi.attr('id');
+        $('.header').text(chat.targetUser.name);
         clearMessagebox();
+
         //append unread msg
         if(chat.unreadChatJson[chat.targetUser.name]&&chat.unreadChatJson[chat.targetUser.name].length>0){
             chat.render(chat.unreadChatJson[chat.targetUser.name],function(msg){
@@ -51,6 +52,11 @@ $(function(){
 
     //SEND MESSAGE
     $('#btnSubmit').click(function(){
+        if(chat.userLstJson[chat.targetUser.name]==null){
+
+            alert(chat.targetUser.name+" is offline.");
+            return false;
+        }
       var msg=$('#txtMsg');
         if(msg.val().length<0){
             alert('content is not null');
@@ -67,6 +73,7 @@ $(function(){
         var messageList=$('#messageList');
         appendMessage(messageList,chatObj);
         chat.appendHistory(chatObj);
+
 
         msg.val('');
 
@@ -122,7 +129,7 @@ function bindMember(){
                 if(chat.unreadChatJson[item.name]){
                     unreadCnt=chat.unreadChatJson[item.name].length;
                 }
-               return "<li class='"+item.name+"'><img src='"+item.avatar+"' alt='"+item.name+
+               return "<li id='"+item.name+"'><img src='"+item.avatar+"' alt='"+item.name+
                       "' class='img-thumbnail personalHead'/> <span>"+item.name+
                    (unreadCnt>0?"<span class='badge'>"+unreadCnt+"</span>":"")+"</span></li>";
 
@@ -133,7 +140,7 @@ function bindMember(){
         else{
             //remove disconnect user from html
             for(var i=0;i<userArr.length;i++){
-                userList.find($('.'+userArr[i].name)).remove();
+                userList.find($('#'+userArr[i].name)).remove();
 
             }
         }
@@ -162,10 +169,10 @@ function bindMessage(){
         else{
           var unreandCnt=chat.appendUnreadMessage(userMessage);
 
-            var reminderObj= $('.'+userMessage.from,$('.userLst')).find($('.badge'));
+            var reminderObj= $('#'+userMessage.from).find($('.badge'));
             if(reminderObj.length<1){
                 var reminderHtml="<span class='badge'>"+unreandCnt+"</span>";
-                var span= $('.'+userMessage.from).find('span');
+                var span= $('#'+userMessage.from).find('span');
                 span.append($(reminderHtml));
             }
             else{

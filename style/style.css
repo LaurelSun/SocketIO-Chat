@@ -73,6 +73,13 @@ ul li{list-style: none;}
     clear:both;
     display:block;
 }
+.menuContainer .header{
+    text-align: center;
+    background-color: #DBDBDB;
+    line-height: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 .sendContainer{
     width:100%;
      padding:0px 5px;
